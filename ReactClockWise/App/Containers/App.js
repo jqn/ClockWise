@@ -1,40 +1,28 @@
 /**
  * App/Containers/App.js
  */
-'use strict';
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { ActionCreators } from '../Actions';
-import { bindActionCreators } from 'redux';
-import Nav from '../Components/Nav';
-import Header from '../Components/Header';
-import MainSection from '../Components/MainSection';
-import css from '../Styles/style.css';
+"use strict";
+import React from "react";
+import Nav from "../Components/Nav";
+import Typography from "@material-ui/core/Typography";
 
-const App = ({ todos, actions }) => (
+const App = () => (
   <Nav>
-    <div className="mdl-grid">
-      <Header addTodo={actions.addTodo} />
-      <MainSection todos={todos} actions={actions} />
-    </div>
+    <Typography paragraph>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
+      non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
+      imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
+      Convallis convallis tellus id interdum velit laoreet id donec ultrices.
+      Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+      adipiscing bibendum est ultricies integer quis. Cursus euismod quis
+      viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin
+      fermentum leo. Mauris commodo quis imperdiet massa tincidunt. Cras
+      tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum
+      varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt.
+      Lorem donec massa sapien faucibus et molestie ac.
+    </Typography>
   </Nav>
 );
 
-App.propTypes = {
-  todos: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  todos: state.Todos
-});
-
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(ActionCreators, dispatch)
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default App;
