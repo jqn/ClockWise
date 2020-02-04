@@ -18,8 +18,13 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import ListIcon from "@material-ui/icons/List";
+import AccessTime from "@material-ui/icons/AccessTime";
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+import AvTimerIcon from "@material-ui/icons/AvTimer";
+import { green } from "@material-ui/core/colors";
+import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
+import ViewListIcon from "@material-ui/icons/ViewList";
 
 const drawerWidth = 240;
 
@@ -149,25 +154,33 @@ const Nav = props => {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <ListItemIcon>
+              <AccessTime />
+            </ListItemIcon>
+            <ListItemText primary="All" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <AvTimerIcon style={{ color: green[500] }} />
+            </ListItemIcon>
+            <ListItemText primary="Active" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <CheckCircleOutlineIcon color="primary" />
+            </ListItemIcon>
+            <ListItemText primary="Completed" />
+          </ListItem>
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <ListItemIcon>
+              <ViewListIcon />
+            </ListItemIcon>
+            <ListItemText primary="Links" />
+          </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
